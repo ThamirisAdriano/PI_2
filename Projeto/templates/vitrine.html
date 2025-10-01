@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Vitrine</title>
+  <!-- Se estiver servindo pelo Flask, deixe assim -->
+  <link rel="stylesheet" href="/static/css/vitrine.css?v=7" />
+  <!-- Se for abrir o HTML direto no navegador (file://), troque a linha acima por:
+  <link rel="stylesheet" href="vitrine.css" />
+  -->
+</head>
+<body>
+  <!-- NAVBAR (sem login) -->
+  <header class="navbar">
+    <div class="wrap">
+      <h1>Congelados Sim Porque Não</h1>
+    </div>
+  </header>
+
+  <!-- CONTEÚDO -->
+  <main class="wrap content">
+    <h2>Nossos Produtos</h2>
+
+    <section class="grid">
+      <!-- 1 -->
+      <article class="card">
+        <img src="/static/imagens/lasanha.jpg" alt="Lasanha de Frango" />
+        <div class="info">
+          <h3>Lasanha de Frango</h3>
+          <p class="desc">500 g · forno 25 min</p>
+          <p class="price">R$ 29,90</p>
+        </div>
+      </article>
+
+      <!-- 2 -->
+      <article class="card">
+        <img src="/static/imagens/empadao_frango.jpg" alt="Empadão de Frango" />
+        <div class="info">
+          <h3>Empadão de Frango</h3>
+          <p class="desc">120 g · forno 15 min</p>
+          <p class="price">R$ 12,00</p>
+        </div>
+      </article>
+
+      <!-- 3 -->
+      <article class="card">
+        <img src="/static/imagens/choco_morango_250.jpg" alt="Bolo de Morango" />
+        <div class="info">
+          <h3>Bolo de Morango</h3>
+          <p class="desc">250 g · forno 10 min</p>
+          <p class="price">R$ 18,50</p>
+        </div>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

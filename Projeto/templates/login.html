@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login</h2>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="mensagens">
+          {% for category, message in messages %}
+            <p class="{{ category }}">{{ message }}</p>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+    <form method="POST" action="{{ url_for('login') }}">
+      <input type="text" name="user" placeholder="Usuário" required>
+      <input type="password" name="login" placeholder="Senha" required>
+      <button type="submit">Entrar</button>
+    </form>
+
+    <p class="cadastro-link">
+      Não tem conta? <a href="{{ url_for('cadastro') }}">Cadastre-se</a>
+    </p>
+  </div>
+</body>
+</html>

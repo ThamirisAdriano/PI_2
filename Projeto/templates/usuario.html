@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}Perfil{% endblock %}
+
+{% block content %}
+<h2>Perfil</h2>
+<form method="POST">
+  Nome: <input type="text" name="nome" value="{{ user.pessoa.nome }}"><br>
+  Sobrenome: <input type="text" name="sobrenome" value="{{ user.pessoa.sobrenome }}"><br>
+  Email: <input type="email" name="email" value="{{ user.email }}"><br>
+  CPF: <input type="text" name="cpf" value="{{ user.pessoa.cpf }}"><br>
+  Data Nascimento: <input type="date" name="data_nasc" value="{{ user.pessoa.data_nasc }}"><br>
+
+  <h3>Telefones</h3>
+  <div id="telefones">
+    {% for fone in user.pessoa.fones %}
+      <input type="text" name="fones" value="{{ fone.fone }}"><br>
+    {% endfor %}
+    {% if not user.pessoa.fones %}
+      <input type="text" name="fones" value=""><br>
+    {% endif %}
+  </div>
+
+  <button type="submit">Salvar</button>
+</form>
+
+<!-- Botão para adicionar mais campos de telefone -->
+<button type="button" onclick="addFone()">Adicionar telefone</button>
+
+<script>
+function addFone() {
+    const div = document.getElementById('telefones');
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.name = 'fones';
+    input.placeholder = 'Novo telefone';
+    div.appendChild(input);
+    div.appendChild(document.createElement('br'));
+}
+</script>
+{% endblock %}
